@@ -3,8 +3,17 @@ spring:
     banner-mode: CONSOLE
   application:
     version: 1.0.0
-    name: JOB-PORTAL-SYSTEM
+    name: QR-MENU-SYSTEM
   profiles:
-    active: dev
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: mysql
+
 server:
-  port: 9090
+  port: ${PORT:9090}
